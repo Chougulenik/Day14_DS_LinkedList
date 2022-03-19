@@ -59,10 +59,25 @@ public class LinkedList {
 		}
 	}
 	
-	public void pop() {
+	public void popFirst() {
 		if(head == null) {
 			System.out.print("is empty");
 		}
 		head = head.next;
+	}
+	
+	public Node popLast() {
+		if(head == null || head.next == null) {
+			return null;
+		}
+		// Find the second last node
+        Node temp = head;
+        while(temp.next.next != null) {
+            temp = temp.next;
+        }
+        // change the second last node next pointer to null
+        temp.next = null;
+ 
+        return head;
 	}
 }

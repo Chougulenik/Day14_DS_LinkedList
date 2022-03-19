@@ -13,8 +13,11 @@ public class Main {
 		list.insertAtMiddle(30);
 		list.show();	
 		System.out.println();
-		list.pop();
-		list.show();			
+		//list.popFirst();
+		//list.show();
+		
+		list.popLast();
+		list.show();
 	}
 
 }
