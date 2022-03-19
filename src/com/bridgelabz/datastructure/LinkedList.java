@@ -57,5 +57,12 @@ public class LinkedList {
 	            newNode.next = middle.next;
 	            middle.next = newNode;
 		}
-	}	
+	}
+	
+	public void pop() {
+		if(head == null) {
+			System.out.print("is empty");
+		}
+		head = head.next;
+	}
 }
