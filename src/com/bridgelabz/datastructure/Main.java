@@ -6,9 +6,12 @@ public class Main {
 		
 		LinkedList list = new LinkedList();
 		list.append(56);
-		list.append(30);
+		//list.append(30);
 		list.append(70);
-		list.show();	
+		list.show();
+		System.out.println();
+		list.insertAtMiddle(30);
+		list.show();		
 	}
 
 }
