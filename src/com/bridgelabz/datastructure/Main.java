@@ -11,7 +11,10 @@ public class Main {
 		list.show();
 		System.out.println();
 		list.insertAtMiddle(30);
-		list.show();		
+		list.show();	
+		System.out.println();
+		list.pop();
+		list.show();			
 	}
 
 }
