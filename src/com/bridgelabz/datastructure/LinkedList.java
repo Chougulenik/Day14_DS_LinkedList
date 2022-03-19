@@ -38,5 +38,24 @@ public class LinkedList {
 			tail = newNode;
 		}	
 	}
-
+	
+	public void insertAtMiddle(int data) {
+		Node newNode = new Node(data);
+		if(head == null) {
+			//return node;
+		}
+		else {
+			 Node temp = head;
+	           Node middle = head;
+	            // Find the middle node
+	            while (temp.next != null && temp.next.next != null)
+	            {
+	                temp = temp.next.next;
+	                middle = middle.next;
+	            }
+	            // add node
+	            newNode.next = middle.next;
+	            middle.next = newNode;
+		}
+	}	
 }
