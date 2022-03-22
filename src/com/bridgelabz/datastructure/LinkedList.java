@@ -2,7 +2,7 @@ package com.bridgelabz.datastructure;
 
 public class LinkedList  {
 	
-	Node head;
+	static Node head;
 	Node tail;
 	
 	public void add(int data) {
@@ -91,5 +91,25 @@ public class LinkedList  {
 		}   
 		return false;
 	}	
+	
+//	public Node insertAtPosition(int i, int po, Node node) {
+//		if(po <1) {
+//			
+//		}
+//	}
+	
+	public static boolean isEmpty() {
+		return true;	
+	}
+	
+	public static void push(int data) {
+		Node newNode = new Node(data);
+		if(isEmpty()) {
+			head = newNode;
+			return;
+		}
+		newNode.next = head;
+		head = newNode;
+	}
 	
 }
