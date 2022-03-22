@@ -92,37 +92,33 @@ public class LinkedList  {
 		return false;
 	}	
 	
-	public static boolean isEmpty() {
-		if(head == null) {
-			return true;
-		}
-		return false;
-	}
-	
-	public static void push(int data) {
-		Node newNode = new Node(data);
-		if(isEmpty()) {
-			head = newNode;
-			return;
-		}
-		newNode.next = head;
-		head = newNode;
-	}
-	
-	public static int pop() {
-		if(isEmpty()) {
-			return -1;
-		}
-		int top = head.data;
-		head = head.next;
-		return top;
-	}
-	
-	public static int peek() {
-		if(isEmpty()) {
-			return -1;
-		}
-		return head.data;
-	}
-		
-}
+
+	public void insertAtPosition(int newElement, int position) {
+			
+		Node newNode = new Node(position); 
+	    newNode.data = newElement;
+	    newNode.next = null;
+
+	    if(position < 1) {
+	      //System.out.print("\nposition should be >= 1.");
+	    } else if (position == 1) {
+	      newNode.next = head;
+	      head = newNode;
+	    } else {
+	      
+	      Node temp = new Node(position);
+	      temp = head;
+	      for(int i = 1; i < position-1; i++) {
+	        if(temp != null) {
+	          temp = temp.next;
+	        }
+	      }
+	   
+	      if(temp != null) {
+	        newNode.next = temp.next;
+	        temp.next = newNode;  
+	      } else {
+	        //System.out.print("\nThe previous node is null.");
+	      }       
+	   }
+}    
