@@ -2,10 +2,10 @@ package com.bridgelabz.datastructure;
 
 public class LinkedList  {
 	
-	Node head;
+	static Node head;
 	Node tail;
 	
-	public void add(int data) {
+	protected void add(int data) {
 		Node newNode = new Node(data);
 		if(head == null) {
 			head = newNode;
@@ -26,7 +26,7 @@ public class LinkedList  {
 		}
 	}
 	
-	public void append(int data) {
+	protected void append(int data) {
 		Node newNode = new Node(data);
 		if(head == null) {
 			head = newNode;
@@ -39,7 +39,7 @@ public class LinkedList  {
 		}	
 	}
 	
-	public void insertAtMiddle(int data) {
+	protected void insertAtMiddle(int data) {
 		Node newNode = new Node(data);
 		if(head == null) {
 			//return node;
@@ -59,14 +59,14 @@ public class LinkedList  {
 		}
 	}
 	
-	public void popFirst() {
+	protected void popFirst() {
 		if(head == null) {
 			System.out.print("is empty");
 		}
 		head = head.next;
 	}
 	
-	public Node popLast() {
+	protected Node popLast() {
 		if(head == null || head.next == null) {
 			return null;
 		}
@@ -81,7 +81,7 @@ public class LinkedList  {
         return head;
 	}
 	
-	public boolean searchNode(int node) {
+	protected boolean searchNode(int node) {
 		Node current = head;
 		while(current != null) {
 			if(current.data == node) {
@@ -92,6 +92,7 @@ public class LinkedList  {
 		return false;
 	}	
 	
+
 	public void insertAtPosition(int newElement, int position) {
 			
 		Node newNode = new Node(position); 
@@ -120,6 +121,4 @@ public class LinkedList  {
 	        //System.out.print("\nThe previous node is null.");
 	      }       
 	   }
-	}    
-		
-}
+}    
