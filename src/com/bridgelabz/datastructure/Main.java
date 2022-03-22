@@ -26,6 +26,10 @@ public class Main {
 			System.out.println("serach key not found");
 		}
 		
+		System.out.println();
+		list.insertAtPosition(40, 3);
+		list.show();
+		
 	}
 
 }
