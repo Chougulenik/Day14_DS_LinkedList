@@ -1,6 +1,6 @@
 package com.bridgelabz.datastructure;
 
-public class LinkedList {
+public class LinkedList  {
 	
 	Node head;
 	Node tail;
@@ -80,4 +80,16 @@ public class LinkedList {
  
         return head;
 	}
+	
+	public boolean searchNode(int node) {
+		Node current = head;
+		while(current != null) {
+			if(current.data == node) {
+				return true;
+			}
+		   current = current.next;
+		}   
+		return false;
+	}	
+	
 }
