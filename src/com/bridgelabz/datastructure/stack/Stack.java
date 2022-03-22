@@ -5,5 +5,6 @@ import com.bridgelabz.datastructure.Node;
 
 public class Stack extends LinkedList{
 	
-	public Node head;
+	Node head;
+	
 }

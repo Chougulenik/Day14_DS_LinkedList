@@ -5,7 +5,7 @@ public class LinkedList  {
 	static Node head;
 	Node tail;
 	
-	public void add(int data) {
+	protected void add(int data) {
 		Node newNode = new Node(data);
 		if(head == null) {
 			head = newNode;
@@ -26,7 +26,7 @@ public class LinkedList  {
 		}
 	}
 	
-	public void append(int data) {
+	protected void append(int data) {
 		Node newNode = new Node(data);
 		if(head == null) {
 			head = newNode;
@@ -39,7 +39,7 @@ public class LinkedList  {
 		}	
 	}
 	
-	public void insertAtMiddle(int data) {
+	protected void insertAtMiddle(int data) {
 		Node newNode = new Node(data);
 		if(head == null) {
 			//return node;
@@ -59,14 +59,14 @@ public class LinkedList  {
 		}
 	}
 	
-	public void popFirst() {
+	protected void popFirst() {
 		if(head == null) {
 			System.out.print("is empty");
 		}
 		head = head.next;
 	}
 	
-	public Node popLast() {
+	protected Node popLast() {
 		if(head == null || head.next == null) {
 			return null;
 		}
@@ -81,7 +81,7 @@ public class LinkedList  {
         return head;
 	}
 	
-	public boolean searchNode(int node) {
+	protected boolean searchNode(int node) {
 		Node current = head;
 		while(current != null) {
 			if(current.data == node) {
@@ -92,14 +92,11 @@ public class LinkedList  {
 		return false;
 	}	
 	
-//	public Node insertAtPosition(int i, int po, Node node) {
-//		if(po <1) {
-//			
-//		}
-//	}
-	
 	public static boolean isEmpty() {
-		return true;	
+		if(head == null) {
+			return true;
+		}
+		return false;
 	}
 	
 	public static void push(int data) {
@@ -112,4 +109,20 @@ public class LinkedList  {
 		head = newNode;
 	}
 	
+	public static int pop() {
+		if(isEmpty()) {
+			return -1;
+		}
+		int top = head.data;
+		head = head.next;
+		return top;
+	}
+	
+	public static int peek() {
+		if(isEmpty()) {
+			return -1;
+		}
+		return head.data;
+	}
+		
 }
