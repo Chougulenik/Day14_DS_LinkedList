@@ -10,5 +10,9 @@ public class Main {
 		queue.append(30);
 		queue.append(70);
 		queue.show();
+		System.out.println();
+		queue.dequeue();
+		queue.show();
+		
 	}
 }
