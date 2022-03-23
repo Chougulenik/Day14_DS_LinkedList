@@ -64,7 +64,7 @@ public class LinkedList  {
 		}
 	}
 	
-	protected void popFirst() {
+	public static void popFirst() {
 		if(head == null) {
 			System.out.print("is empty");
 		}
@@ -211,6 +211,11 @@ public class LinkedList  {
 		}
 		return head.data;
 	}
+	
+	public void dequeue() {
+		popFirst();
+	}
+	
 	
 	
 	
