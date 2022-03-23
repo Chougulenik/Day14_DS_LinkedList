@@ -9,6 +9,9 @@ public class Main {
 		list.append(30);
 		list.append(70);
 		list.show();
+		list.sortList();
+		System.out.println();
+		list.show();
 		System.out.println();
 		list.insertAtMiddle(30);
 		list.show();	
