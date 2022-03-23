@@ -4,6 +4,11 @@ public class LinkedList  {
 	
 	static Node head;
 	Node tail;
+	static int size;
+	
+//	LinkedList() {
+//		size = 0;
+//	}
 	
 	protected void add(int data) {
 		Node newNode = new Node(data);
@@ -64,6 +69,7 @@ public class LinkedList  {
 			System.out.print("is empty");
 		}
 		head = head.next;
+		size--;
 	}
 	
 	protected Node popLast() {
@@ -71,6 +77,7 @@ public class LinkedList  {
 			return null;
 		}
 		// Find the second last node
+		size--;
         Node temp = head;
         while(temp.next.next != null) {
             temp = temp.next;
@@ -121,4 +128,31 @@ public class LinkedList  {
 	        //System.out.print("\nThe previous node is null.");
 	      }       
 	   }
-}    
+	}
+	
+	public void removeElements(int key) {
+		Node current = head;
+		Node temp = null;
+		
+		if(current != null  && current.data == key) {
+			head = current.next;
+			return;
+		}
+		
+		while(current != null  && current.data != key) {
+			temp = current;
+			current = current.next;
+		}
+		if(current == null) {
+			return;
+		}
+		temp.next = current.next;
+		size--;
+	}
+	
+	public int getSize() {
+		System.out.println();
+		return size;
+	}
+	
+}
