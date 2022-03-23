@@ -31,7 +31,7 @@ public class LinkedList  {
 		}
 	}
 	
-	protected void append(int data) {
+	public void append(int data) {
 		Node newNode = new Node(data);
 		if(head == null) {
 			head = newNode;
@@ -100,7 +100,7 @@ public class LinkedList  {
 	}	
 	
 
-	public void insertAtPosition(int newElement, int position) {
+	protected void insertAtPosition(int newElement, int position) {
 			
 		Node newNode = new Node(position); 
 	    newNode.data = newElement;
@@ -130,7 +130,7 @@ public class LinkedList  {
 	   }
 	}
 	
-	public void removeElements(int key) {
+	protected void removeElements(int key) {
 		Node current = head;
 		Node temp = null;
 		
@@ -150,7 +150,7 @@ public class LinkedList  {
 		size--;
 	}
 	
-	public void sortList() {
+	protected void sortList() {
 		Node current = head;
 		Node index = null;
 		int temp;
@@ -178,5 +178,41 @@ public class LinkedList  {
 		System.out.println();
 		return size;
 	}
+	
+	public static boolean isEmpty() {
+		if(head == null) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static void push(int data) {
+		Node newNode = new Node(data);
+		if(isEmpty()) {
+			head = newNode;
+			return;
+		}
+		newNode.next = head;
+		head = newNode;
+	}
+	
+	public static int pop() {
+		if(isEmpty()) {
+			return -1;
+		}
+		int top = head.data;
+		head = head.next;
+		return top;
+	}
+	
+	public static int peek() {
+		if(isEmpty()) {
+			return -1;
+		}
+		return head.data;
+	}
+	
+	
+	
 	
 }
